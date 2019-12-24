@@ -1,0 +1,6 @@
+this is a python budget tracking system made for school
+project in AAiT
+
+
+
+---> give recognition to people who built it <---

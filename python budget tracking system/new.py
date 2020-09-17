@@ -1,61 +1,46 @@
 from tkinter import *
 from tkinter import messagebox
 import datetime
-#
 import win32com.client
 import os,os.path
 
 class Home:
     def __init__(self,root):
         self.root = root
-       # self.root.state("zoomed")
         self.root.title("Budget Tracking System for AAiT")
         self.root.iconbitmap("newlogo.ico")
-
         self.root.geometry('590x600')
-        
         self.logoImage = PhotoImage(file = "logo.gif")
-    
         #self.Login_frame = Frame(self.root, width = 1000, height = 1000) #Main Frame of the login
         #self.Login_frame.place( x = 100, y = 50)
-
         self.login_image = Frame(self.root)
         self.login_image.place(x = 240, y = 80)
-
         self.login_image_place = Label(self.login_image,image = self.logoImage)
         self.login_image_place.image = self.logoImage
         self.login_image_place.grid(row = 0 , column = 2)
-        
         self.login = Frame(self.root,width = 800, height = 200)
         self.login.place(x = 130 , y = 240)
         self.login.label = Label(self.login,text = "AAiT Budget Tracking system ",font = ('Times New Roman',18,'bold'))
         self.login.label.grid(row = 0,columnspan= 6,padx = 0)
-        
         self.user_ask = Label(self.login,text = "Username: ",font = ('Times New Roman',12))
         self.password_ask = Label(self.login,text = "Password: ",font = ('Times New Roman',12))
-        
         self.user_ask.grid(row = 1,column=0, stick = W,pady = 40,padx = 30)
         self.password_ask.grid(row = 2, column=0, stick = W,padx = 30)
-        
         self.user_name_Entry = Entry(self.login)
         self.user_password_Entry = Entry(self.login,show = "*")
         self.user_name_Entry.grid(row = 1,column = 1)
         self.user_password_Entry.grid(row = 2,column = 1)
-        
         self.Check_value = IntVar()
         self.variable = StringVar()
         self.varframe = Label(self.login,textvariable = self.variable)
         self.LoginButton = Button(self.login,text = "Login",command = self.ConfirmPassword)
         self.LoginButton.grid(row = 5,columnspan = 3, pady = 35)
-
         self.user_name = self.user_name_Entry.get()
         self.user_password = self.user_password_Entry.get()
         self.Check_value = self.Check_value.get()
-
         self.homepageicon = PhotoImage(file = 'illumnati.png')
         self.homepagelabel = Label (self.root,image = self.homepageicon)
         self.homepagelabel.place(x = 440,y = 450)
-
 
     def ConfirmPassword(self):
         #New = Manager("Managing Director")
@@ -170,20 +155,7 @@ class Department(Home):
 
         self.welcometext = Label (self.root,text = "Welcome",font=("Courier", 44),bg = "#CCFFFF")
         self.welcometext.place(x = 500 ,y = 400)
-
-        
-##        
-##        if self.job !='itsc' and self.job !='IT':
-##            self.welcometext = Label (self.SearchMain,text = self.jobonly+"Engineering head") 
-##            self.welcometext.place(x = 110 ,y = 200)
-##        elif self.job == "itsc":
-##             self.welcometext = Label(self.SearchMain,text = "head of "+self.jobonly)
-##        else:
-##            self.welcometext = Label(self.SearchMain,text = "welcome "+self.jobonly)
-##        self.wb = openpyxl.load_workbook("Budget.xlsx")
-##        self.Sheetname = "BudgetCode"
-##
-        
+      
 
     def ReturnHome(self):
         self.actions.destroy()

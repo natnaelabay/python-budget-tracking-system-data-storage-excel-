@@ -162,18 +162,7 @@ class Department(Home):
         self.welcometext = Label (self.root,text = "Welcome",font=("Courier", 44),bg = "#CCFFFF")
         self.welcometext.place(x = 500 ,y = 400)
 
-        
-##        
-##        if self.job !='itsc' and self.job !='IT':
-##            self.welcometext = Label (self.SearchMain,text = self.jobonly+"Engineering head") 
-##            self.welcometext.place(x = 110 ,y = 200)
-##        elif self.job == "itsc":
-##             self.welcometext = Label(self.SearchMain,text = "head of "+self.jobonly)
-##        else:
-##            self.welcometext = Label(self.SearchMain,text = "welcome "+self.jobonly)
-##        self.wb = openpyxl.load_workbook("Budget.xlsx")
-##        self.Sheetname = "BudgetCode"
-##
+    
         
 
     def ReturnHome(self):
